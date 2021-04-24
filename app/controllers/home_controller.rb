@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    #@users = User.all
+    @todos = Todo.all
     render "index"
   end
 end
