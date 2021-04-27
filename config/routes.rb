@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "todos/create" => "todos#create"
   get "/", to: "home#index"
   patch "todos/update" => "todos#update"
+  resources :users
 end
