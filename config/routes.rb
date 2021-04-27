@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/", to: "home#index"
   patch "todos/update" => "todos#update"
   resources :users
+  post "users/login", to: "users#login"
 end

@@ -13,4 +13,10 @@ class UsersController < ApplicationController
     response_text = "Hey #{user_name}, you have been successfully added!"
     render plain: response_text
   end
+
+  def login
+    user_email = params[:email]
+    password = params[:password_digest]
+    render plain: User.auth?(user_email, password)
+  end
 end
