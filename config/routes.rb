@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   #patch "todos/update" => "todos#update"
   resources :todos
   resources :users
-  post "users/login", to: "users#login"
+  get "/signin" => "sessions#new", as: :new_session
+  post "/signin" => "sessions#create", as: :session
 end

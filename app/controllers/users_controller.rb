@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user_name = params[:first_name]
     user_email = params[:email]
     password = params[:password]
-    new_user = User.create!(first_name: user_name, email: user_email, password_digest: password)
+    new_user = User.create!(first_name: user_name, email: user_email, password: password)
     redirect_to "/"
   end
 
