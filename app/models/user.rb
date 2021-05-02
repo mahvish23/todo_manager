@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   #extend Devise::Model
+  has_secure_password
+  has_many :todos
 
   def to_pleasant_string
     "Name - #{first_name}   Email:- #{email}"

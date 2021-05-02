@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get "todos" => "todos#index"
 
   #post "todos/create" => "todos#create"
-  #get "/", to: "home#index"
+  get "/", to: "home#index"
   #patch "todos/update" => "todos#update"
   resources :todos
   resources :users

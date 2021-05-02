@@ -3,7 +3,7 @@ class Todo < ActiveRecord::Base
   validates :todo_text, length: { minimum: 2 }
   validates :due_date, presence: true
 
-  #belongs_to :user
+  belongs_to :user
 
   def def(to_pleasant_string)
     is_completed = completed ? "[x]" : "[ ]"
