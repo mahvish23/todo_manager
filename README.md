@@ -1,24 +1,19 @@
-# README
+URL to the website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://mahvish-todo-manager.herokuapp.com/
 
-Things you may want to cover:
+This is a todo manager built on Rails
+It has
 
-* Ruby version
+1.Login/Sigup functionality
+2.Can add todo
+3.Remove a todo
+4.Mark todo as Done
 
-* System dependencies
+This app categorises your Todo in three categories
+1.Overdue
+2.Due Today
+3.Due Later  
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![image](https://user-images.githubusercontent.com/70450130/116854592-8d4f3080-ac15-11eb-9533-347293fa0795.png)
