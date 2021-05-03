@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
   def index
     #render plain: Todo.order(:due_date).map { |todo| todo.to_pleasant_string }.join("\n")
-    @todos = Todo.all #global variable jo ki fetch ki tm sara todo lane k lie
+    @todos = Todo.of_user(current_user) #global variable jo ki fetch ki tm sara todo lane k lie
     render "index"
   end
 
@@ -23,7 +23,7 @@ class TodosController < ApplicationController
 
   def destroy
     todo_id = params[:id]
-    todo = Todo.find(todo_id)
+    todo = Todo.of_user(current_user).find(todo_id)
     todo.destroy
     redirect_to todos_path
   end

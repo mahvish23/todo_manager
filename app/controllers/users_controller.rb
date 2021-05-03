@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :ensure_user_logged_in
 
   def new_todo
     render "user/new"
@@ -13,8 +13,13 @@ class UsersController < ApplicationController
     user_name = params[:first_name]
     user_email = params[:email]
     password = params[:password]
-    new_user = User.create!(first_name: user_name, email: user_email, password: password)
-    redirect_to "/"
+    user = User.create!(first_name: user_name, email: user_email, password: password)
+    if user.save
+      session[:current_user_id] = user.id
+      redirect_to todos_path
+    else
+      redirect_to new_user_path
+    end
   end
 
   def login
