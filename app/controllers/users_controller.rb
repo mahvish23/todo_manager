@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     user_email = params[:email]
     password = params[:password]
     user = User.create!(first_name: user_name, email: user_email, password: password)
-    if user.save
+    if user.save!
       session[:current_user_id] = user.id
       redirect_to todos_path
     else
