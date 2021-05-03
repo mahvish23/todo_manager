@@ -13,11 +13,12 @@ class UsersController < ApplicationController
     user_name = params[:first_name]
     user_email = params[:email]
     password = params[:password]
-    user = User.create!(first_name: user_name, email: user_email, password: password)
-    if user.save!
+    user = User.new(first_name: user_name, email: user_email, password: password)
+    if user.save
       session[:current_user_id] = user.id
       redirect_to todos_path
     else
+      flash[:error] = user.errors.full_messages.join(", ")
       redirect_to new_user_path
     end
   end
